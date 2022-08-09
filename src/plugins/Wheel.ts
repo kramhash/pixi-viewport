@@ -125,21 +125,23 @@ export class Wheel extends Plugin
      */
     protected handleKeyPresses(codes: string[]): void
     {
-        window.addEventListener('keydown', (e) =>
-        {
-            if (codes.includes(e.code))
+        if (window) {
+            window.addEventListener('keydown', (e) =>
             {
-                this.keyIsPressed = true;
-            }
-        });
+                if (codes.includes(e.code))
+                {
+                    this.keyIsPressed = true;
+                }
+            });
 
-        window.addEventListener('keyup', (e) =>
-        {
-            if (codes.includes(e.code))
+            window.addEventListener('keyup', (e) =>
             {
-                this.keyIsPressed = false;
-            }
-        });
+                if (codes.includes(e.code))
+                {
+                    this.keyIsPressed = false;
+                }
+            });
+        }
     }
 
     protected checkKeyPress(): boolean

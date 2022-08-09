@@ -113,8 +113,8 @@ export interface IViewportTransformState {
 }
 
 const DEFAULT_VIEWPORT_OPTIONS: ICompleteViewportOptions = {
-    screenWidth: window.innerWidth,
-    screenHeight: window.innerHeight,
+    screenWidth: window ? window.innerWidth : 800,
+    screenHeight: window ? window.innerHeight : 600,
     worldWidth: null,
     worldHeight: null,
     threshold: 5,
@@ -317,8 +317,8 @@ export class Viewport extends Container {
      * @param {number} [worldHeight]
      */
     resize(
-        screenWidth: number = window.innerWidth,
-        screenHeight: number = window.innerHeight,
+        screenWidth: number = window ? window.innerWidth : 800,
+        screenHeight: number = window ? window.innerHeight : 600,
         worldWidth?: number,
         worldHeight?: number
     ): void {

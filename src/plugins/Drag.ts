@@ -182,17 +182,19 @@ export class Drag extends Plugin
      */
     protected handleKeyPresses(codes: string[]): void
     {
-        window.addEventListener('keydown', (e) =>
-        {
-            if (codes.includes(e.code))
-            { this.keyIsPressed = true; }
-        });
+        if (window) {
+            window.addEventListener('keydown', (e) =>
+            {
+                if (codes.includes(e.code))
+                { this.keyIsPressed = true; }
+            });
 
-        window.addEventListener('keyup', (e) =>
-        {
-            if (codes.includes(e.code))
-            { this.keyIsPressed = false; }
-        });
+            window.addEventListener('keyup', (e) =>
+            {
+                if (codes.includes(e.code))
+                { this.keyIsPressed = false; }
+            });
+        }
     }
 
     /**
