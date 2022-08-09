@@ -2,7 +2,7 @@
  
 /*!
  * pixi-viewport - v4.34.4
- * Compiled Tue, 09 Aug 2022 02:39:48 UTC
+ * Compiled Tue, 09 Aug 2022 05:48:03 UTC
  *
  * pixi-viewport is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -4401,8 +4401,8 @@ class PluginManager
 
 
 const DEFAULT_VIEWPORT_OPTIONS = {
-    screenWidth: window ? window.innerWidth : 800,
-    screenHeight: window ? window.innerHeight : 600,
+    screenWidth: typeof window != "undefined" ? window.innerWidth : 800,
+    screenHeight: typeof window != 'undefined' ? window.innerHeight : 600,
     worldWidth: null,
     worldHeight: null,
     threshold: 5,
