@@ -113,8 +113,8 @@ export interface IViewportTransformState {
 }
 
 const DEFAULT_VIEWPORT_OPTIONS: ICompleteViewportOptions = {
-    screenWidth: window ? window.innerWidth : 800,
-    screenHeight: window ? window.innerHeight : 600,
+    screenWidth: typeof window != "undefined" ? window.innerWidth : 800,
+    screenHeight: typeof window != 'undefined' ? window.innerHeight : 600,
     worldWidth: null,
     worldHeight: null,
     threshold: 5,
